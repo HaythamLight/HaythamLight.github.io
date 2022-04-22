@@ -1,70 +1,99 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html  lang=zh-Hans>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+    
+    <link rel="shortcut icon" href="/images/favicon.ico ">
+    
+    
+    <link rel="icon" type="image/png" href="/images/favicon-android.png " sizes="192x192">
+    
+    
+    <link rel="apple-touch-icon" href="/images/favicon-apple.png " sizes="180x180">
+    
+  
+  <!-- title -->
+  <title>Haytham Kenway 专题 </title>
+  <!-- styles -->
+  <!-- styles -->
 
-  {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + config.title %}{#
+<link rel="stylesheet" href="/styles/global.css">
 
-  #}{% if page.type === "categories" and not page.title %}{#
-    #}{{ __('title.category') + page_title_suffix }}{#
-  #}{% elif page.type === "tags" and not page.title %}{#
-    #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{% else %}{#
-    #}{{ page.title + page_title_suffix }}{#
-  #}{% endif %}{#
-#}{% endblock %}
+  <!-- rss -->
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+  <body>
+    <header id="header">
+  
+  <nav class="menu">
+  
+    <a class="menu__item" href="/">主页</a>
+    <a class="menu__item" href="/archives/">归档</a>
+    <a class="menu__item" href="/categories/">专题</a>
+    <a class="menu__item" href="/tags/">标签</a>
+    <!-- <a class="menu__item" href="/">作品</a> -->
+    <!-- <a class="menu__item" href="/about/">关于</a> -->
+  </nav>
+</header>
+    <main>
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post__header">
+  <h1 class="post__title">专题</h1>
+  
+  
+  <div class="post__meta">
+    
+<time class="post__date" datetime="2022-04-22T07:22:23.000Z" itemprop="datePublished">
+  
+  2022-04-22
+</time>
 
-{% block page_class %}page-post-detail{% endblock %}
+    
 
-{% block content %}
+    
 
-  <div id="posts" class="posts-expand">
-    {##################}
-    {### PAGE BLOCK ###}
-    {##################}
-    <div class="post-block page">
-      {% include '_partials/page-header.swig' %}
-      {#################}
-      {### PAGE BODY ###}
-      {#################}
-      <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
-        {# tagcloud page support #}
-        {% if page.type === "tags" %}
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                {{ _p('counter.tag_cloud', site.tags.length) }}
-            </div>
-            <div class="tag-cloud-tags">
-              {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: '#ccc', end_color: '#111'}) }}
-            </div>
-          </div>
-        {% elif page.type === 'categories' %}
-          <div class="category-all-page">
-            <div class="category-all-title">
-                {{ _p('counter.categories', site.categories.length) }}
-            </div>
-            <div class="category-all">
-              {{ list_categories() }}
-            </div>
-          </div>
-        {% else %}
-          {{ page.content }}
-        {% endif %}
-      </div>
-      {#####################}
-      {### END PAGE BODY ###}
-      {#####################}
-    </div>
-    {######################}
-    {### END PAGE BLOCK ###}
-    {######################}
+    <div id="/categories/index.html" class="leancloud_visitors post__stat" data-flag-title="专题">
+  <i class="blogfont">&#xe672;</i>
+  <span class="leancloud-visitors-count">loading...</span>
+</div>
   </div>
+</header>
+  <aside class="post__aside">
+  <div class="post__actions">
+    <a id="backTop" class="post__top" href="javascript:">
+      <i class="blogfont">&#xe6b1;</i><!-- Top -->
+    </a>
+    <a id="share" class="post__share" href="javascript:">
+      <i class="blogfont">&#xe6c1;</i>
+    </a>
+  </div>
+  
+</aside>
+  <div class="post__content" itemprop="articleBody">
+    
+  </div>
+  
+</article>
+    </main>
+    <footer id="footer">
+  Copyright &copy;
+  2022
+  无明的博客
+  
+  
+    <a class="social-links" target="_blank" rel="noopener" href="https://space.bilibili.com/95328483?spm_id_from=333.1007.0.0"><i class="blogfont">&#xe6b7; </i></a>
+  
+    <a class="social-links" href="465884690@qq.com"><i class="blogfont">&#xe61a; </i></a>
+  
+    <a class="social-links" target="_blank" rel="noopener" href="https://github.com/HaythamLight"><i class="blogfont">&#xe640; </i></a>
+  
+  
+</footer>
+    <!-- scripts -->
 
-{% endblock %}
+<script src="/scripts/main.js"></script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
-
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  </body>
+</html>
